@@ -2,10 +2,8 @@ S -> NP VP
 NP -> NP ADJP
 NP -> NN ADJP
 NP -> NN NN
-ADJP -> JJ
 ADJP -> JJ NP
 VP -> VB NP
-VP -> VB
 VP -> RB VP
 VP -> RB VB
 VP -> VP PP
@@ -13,8 +11,11 @@ PP -> IN NP
 VP -> VB VB
 NP -> PP NP
 VP -> VB ADVP
+VP -> ADVP VP
+VP -> JJ VP
 NP -> PRP NN
 VP -> VB JJ
+VP -> VP JJ
 ADVP -> ADV JJ
 NP -> NN PRP
 NP -> PP VP
@@ -25,6 +26,7 @@ NP -> tôi
 NN -> chiều
 NN -> thu
 NN -> nắng
+ADJP -> mờ
 JJ -> phớt
 JJ -> mờ
 VB -> sợ
@@ -45,7 +47,7 @@ ADV -> rất
 JJ -> nhanh
 PRP -> Anh
 PRP -> anh
-NN -> vô_tình
+ADVP -> vô_tình
 VB -> đi
 VB -> thấy
 NP -> mình
@@ -53,7 +55,7 @@ NN -> mắt
 NP -> tim
 VB -> mỉm
 VB -> cười
-VB -> bước_đi
+VP -> bước_đi
 VB -> bước
 VB -> đi
 JJ -> nhẹ_nhàng
@@ -76,3 +78,4 @@ VB -> vào
 NN -> hè
 RB -> đã
 JJ -> nực
+
