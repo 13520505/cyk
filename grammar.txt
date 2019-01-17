@@ -1,0 +1,79 @@
+S -> NP VP
+NP -> NP ADJP
+NP -> NN ADJP
+NP -> NN NN
+ADJP -> JJ
+ADJP -> JJ NP
+VP -> VB NP
+VP -> VB
+VP -> RB VP
+VP -> VB NP
+VP -> RB VB
+VP -> VP PP
+PP -> IN NP
+VP -> VB VB
+NP -> PP NP
+VP -> VB ADVP
+NP -> PRP NN
+VP -> VB JJ
+ADVP -> ADV JJ
+NP -> NN PRP
+NP -> PP VP
+ADJP -> RB JJ
+VP -> VB NN
+NP -> Tôi
+NP -> tôi
+NN -> chiều
+NN -> thu
+NN -> nắng
+JJ -> phớt
+JJ -> mờ
+VB -> sợ
+NP -> em
+NP -> Em
+NP -> Anh
+NP -> anh
+RB -> vẫn
+VB -> chờ
+NN -> Cuộc
+NN -> cuộc
+NN -> tình
+VB -> đi
+VB -> qua
+IN -> trong
+NP -> tình
+ADV -> rất
+JJ -> nhanh
+PRP -> Anh
+PRP -> anh
+NN -> vô_tình
+VB -> đi
+VB -> thấy
+NP -> mình
+NN -> mắt
+NP -> tim
+VB -> mỉm
+VB -> cười
+VB -> bước_đi
+VB -> bước
+VB -> đi
+JJ -> nhẹ_nhàng
+NP -> đất
+NP -> Đất
+VB -> là
+IN -> nơi
+VB -> đến
+NP -> trường
+NP -> biển
+NN -> biển
+NN -> vàng
+IN -> giữa
+VP -> đi
+NP -> trời
+NP -> Trời
+NN -> trời
+NN -> Trời
+VB -> vào
+NN -> hè
+RB -> đã
+JJ -> nực
