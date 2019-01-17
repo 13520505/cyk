@@ -7,7 +7,6 @@ ADJP -> JJ NP
 VP -> VB NP
 VP -> VB
 VP -> RB VP
-VP -> VB NP
 VP -> RB VB
 VP -> VP PP
 PP -> IN NP
