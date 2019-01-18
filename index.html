@@ -16,7 +16,8 @@
     <script type="text/javascript">
     $(document).ready(function() {
         clean_rules = []
-        var remote_src = 'https://raw.githubusercontent.com/13520505/cyk/master/'
+        grammar = null;
+        var url = 'https://raw.githubusercontent.com/13520505/cyk/master/'
 
         function clean_input(str) {
             str = str.toLowerCase()
@@ -43,11 +44,11 @@
                         clean_rules.push({ src: replace_rule[0], dest: replace_rule[1] })
                 }
             }
-            console.log(clean_rules)
+            grammar = data;
         }
 
         $.get('grammar.txt', getGrammar).fail(function() {
-            $.get(remote_src + 'grammar.txt', getGrammar)
+            $.get(url + 'grammar.txt', getGrammar)
         })
 
         function getBienThe(data) {
@@ -68,15 +69,15 @@
             })
         }
         $.get('bienthe.txt', getBienThe).fail(function() {
-            $.get(remote_src + 'bienthe.txt', getBienThe)
+            $.get(url + 'bienthe.txt', getBienThe)
         })
 
         function start() {
-            var grammar_val = $('#grammar').val()
+            var grammar_val = grammar;
             var input_text_val = clean_input($('#input_text').val())
             $('#input_text').val(input_text_val)
 
-            do_parse(grammar_val, input_text_val);
+            // do_parse(grammar_val, input_text_val);
             render_tree(grammar_val, input_text_val, 'tree_output')
 
             $('html, body').animate({
@@ -84,7 +85,7 @@
             }, 300);
         }
 
-        $('#form').submit(function(e) {
+        $('#submit').click(function(e) {
             start()
             e.preventDefault()
         })
@@ -101,36 +102,11 @@
                 </div>
             </div>
         </header>
-        <div class="row mb-4 mt-4">
-            <div class="col">
-                <div class="card flex-md-row mb-4 shadow-sm">
-                    <div class="card-body">
-                        <strong class="d-inline-block mb-2 text-primary">Gammar (CNF)</strong>
-                        <div class="form-group">
-                            <textarea name="grammar" id="grammar" class="form-control" rows="10" placeholder="e.g. S -> NP VP" aria-describedby="helpGrammar">
-                            </textarea>
-                            <small id="helpGrammar" class="text-muted">CNF Format</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card flex-md-row mb-4 shadow-sm">
-                    <div class="card-body">
-                        <strong class="d-inline-block mb-2 text-primary">Một số biến thể</strong>
-                        <div class="ml-10">
-                            <select class="form-control" size="15" id="bienthe">
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <div class="row">
             <div class="col">
                 <div class="card flex-md-row mb-4 shadow-sm">
                     <div class="card-body">
-                        <form id="form">
                             <div class="row">
                                 <div class="col mb-2 text-primary">
                                     <strong>Nhập câu phân tích</strong>
@@ -141,33 +117,24 @@
                                     <input type="text" name="input_text" id="input_text" class="form-control" placeholder="" aria-describedby="helpInput" value="">
                                 </div>
                                 <div class="col text-center">
-                                    <button type="submit" class="btn btn-primary btn-outline btn-block" id="submit">Phân tích</button>
+                                    <button class="btn btn-primary btn-outline btn-block" id="submit">Phân tích</button>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row mt-4">
-            <div class="col">
-                <h4>Thuật toán CKY</h4>
-                <div id="cky_output" style="display:none">
-                    <table class="table" id="tsentence"></table>
-                    <table class="table table-bordered" id="tchart" width="97%" height="90%"></table>
-                </div>
-            </div>
         </div>
         <div class="row mt-4 mb-5">
             <div class="col">
-                <h4>Cây cú pháp</h4>
-                <div id="tree_output"></div>
+                <h4 class ="text-center">Cây cú pháp</h4>
+                <div class="col-centered" id="tree_output"></div>
             </div>
         </div>
         <div class="row mt-4 mb-5">
             <div class="col">
                 <center>
-                    <hr />(c) duyet</center>
+                    <hr />Minh Hoàng Anh - CH1801010</center>
             </div>
         </div>
     </div>

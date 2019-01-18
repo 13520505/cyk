@@ -2,6 +2,7 @@ S -> NP VP
 NP -> NP ADJP
 NP -> NN ADJP
 NP -> NN NN
+NP -> NN JJ
 ADJP -> JJ NP
 VP -> VB NP
 VP -> RB VP
@@ -26,7 +27,6 @@ NP -> tôi
 NN -> chiều
 NN -> thu
 NN -> nắng
-ADJP -> mờ
 JJ -> phớt
 JJ -> mờ
 VB -> sợ
@@ -78,4 +78,5 @@ VB -> vào
 NN -> hè
 RB -> đã
 JJ -> nực
+
 
